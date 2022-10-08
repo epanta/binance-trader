@@ -1,0 +1,42 @@
+1server:
+  port: 8083
+operator: binance
+binance: #Nome da corretora usada na operacao
+  apikey: xpto
+  secret: abcd
+  currency.to.buy: C98BUSD, SOLBUSD, ETHBUSD, BTCBUSD
+  currency.percentage.limit: 2
+  simulated:
+    active: true               #eh uma simulacao?
+    total.available: 10000.0    #total disponivel para simulacao
+  buyer:
+    order.limit: 4             #Quantidade maxima de compras
+    order.type: MARKET         #tipo da orderm de compra MARKET (compra na hora) ou LIMITraderUtilT (agenda a compra baseada com um preco)
+    order.volume: 500000.0
+    order.currency: BUSD        #Moeda compradora
+    order.value: 100       #Valor em relacao de cada compra
+    increase.percentage: 0.5
+
+    search.pairs.top.limit: 5  #Limite de pares para compra
+    min.percentage.increase.currency: 20
+    strategy: 5
+  seller:
+    percentage:
+      limit:
+        hold: -6
+        gain: 1
+        loss: -5
+        keep.coin: false
+        loss.related.gain: -0.7
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/robot
+    username: root
+    password: xyz
+  jpa:
+    hibernate.ddl-auto: create
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: false
