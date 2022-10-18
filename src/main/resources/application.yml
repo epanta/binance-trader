@@ -36,7 +36,7 @@ spring:
     username: root
     password: 123456
   jpa:
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: create
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     generate-ddl: true
     show-sql: false
