@@ -1,9 +1,9 @@
-1server:
+server:
   port: 8083
 operator: binance
 binance: #Nome da corretora usada na operacao
-  apikey: xpto
-  secret: abcd
+  apikey: cgave
+  secret: password
   currency.to.buy: C98BUSD, SOLBUSD, ETHBUSD, BTCBUSD
   currency.percentage.limit: 2
   simulated:
@@ -26,7 +26,7 @@ binance: #Nome da corretora usada na operacao
         hold: -6
         gain: 1
         loss: -5
-        keep.coin: false
+        keep.coin: true
         loss.related.gain: -0.7
 
 spring:
@@ -34,9 +34,9 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/robot
     username: root
-    password: xyz
+    password: 123456
   jpa:
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: update
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     generate-ddl: true
     show-sql: false
